@@ -43,6 +43,7 @@ const Room = () => {
         <div>
             <h1>Room</h1>
             {cards}
+            {/* TODO: This should be removed as it was purely for testing. */}
             <button onClick={addUserToFirebaseTest}>Add User</button>
         </div>
     )
