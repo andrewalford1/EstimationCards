@@ -1,5 +1,6 @@
 body {
     background-color: #1F2833;
+    overflow-y:hidden;
     margin: 0;
 }
 
@@ -12,6 +13,24 @@ a {
     color: #FFFFFF;
 }
 
+p {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+img {
+    max-width: 75%;
+    max-height: 75%;
+}
+
+body {
+    max-height: 70%;
+}
+
+footer {
+    margin-top: auto;
+}
+
 .App {
     height: 100vh;
     display: flex;
@@ -22,5 +41,11 @@ a {
     align-items: center;
     display: flex;
     flex-direction: column;
+    padding: 0% 20% 0%;
+    max-height: 90%;
+}
+
+#intro_text {
+    padding: 10% 0% 10%;
 }
 
