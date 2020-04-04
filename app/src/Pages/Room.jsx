@@ -27,10 +27,15 @@ const Room = () => {
         })
     }
 
-    const getUserCards = (users) => {
+    let cards
+
+    if (Array.isArray(users)) {
         // loop over users
         // for each user, get their name, number and ready status
         // return in a card component and pass down values
+        cards = users.map((user) => {
+            console.log(user)
+        })
     }
 
     return (
