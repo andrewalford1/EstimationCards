@@ -1,0 +1,50 @@
+body {
+    background-color: #000000;
+    margin: 0;
+}
+
+h1 {
+    color: #FFFFFF;
+}
+
+ul {
+    list-style-type: none;
+    font-size: x-large;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+li {
+    margin-left: 1em;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+i {
+    color: #FFFFFF;    
+}
+
+i:hover {
+    color: #66FCF1;
+}
+
+.App {
+    height: 100vh;
+    display: flex;
+}
+
+.SideBar {
+    width: 5%;
+    background-color: #0B0C10;
+}
+
+.Page {
+    text-align: center;
+    flex-grow: 1;
+}
+

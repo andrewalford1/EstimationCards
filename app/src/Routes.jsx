@@ -8,11 +8,13 @@ const Routes = () => (
     <Router>
         <Switch>
             <Route exact path='/'>
-                <LandingPage />
+                <LandingPage/>
             </Route>
+
             <Route path='/randomRoomID'>
                 <Room />
             </Route>
+            
             <Route>
                 <UnknownPage/>
             </Route>
