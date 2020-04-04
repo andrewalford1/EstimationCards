@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-import Host from './Pages/Host';
+import Room from './Pages/Room';
 
 export default () => (
 
     <Router>
         <Route path="/">
-            <Host/>
+            <Room/>
         </Route>
     </Router>
 );
