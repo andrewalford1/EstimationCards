@@ -3,16 +3,19 @@ import Store, { getRealTimeUsersInRoom } from '../store/store'
 
 const Room = () => {
     const [users, setUsers] = useState({})
+
+    // TODO: Get room ID from URL I'm guessing
     const [room, setRoom] = useState(1)
+
+    // TODO: Get user ID from somewhere...
     const [currentUser, setCurrentUser] = useState(1)
 
     useEffect(() => {
+        // Updates the number of users available in the room
         getRealTimeUsersInRoom(room, (error, newUsers) => {
             !error && setUsers(newUsers)
         })
     }, [room])
-
-    console.log('users', users)
 
     const addUserToFirebaseTest = () => {
         Store.users.add({
