@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default () => (
-    <div>
+    <div className='Page'>
         <h1>
             Landing Page
         </h1>
