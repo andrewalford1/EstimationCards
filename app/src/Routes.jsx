@@ -4,21 +4,20 @@ import Room from './Pages/Room'
 import LandingPage from './Pages/LandingPage'
 import UnknownPage from './Pages/404'
 
-export default () => (
-
+const Routes = () => (
     <Router>
         <Switch>
-            <route exact path='/'>
-                <LandingPage/>
-            </route>
-            
-            <Route path="/randomRoomID">
-                <Room/>
+            <Route exact path='/'>
+                <LandingPage />
             </Route>
-
+            <Route path='/randomRoomID'>
+                <Room />
+            </Route>
             <Route>
                 <UnknownPage/>
             </Route>
         </Switch>
     </Router>
-);
+)
+
+export default Routes
