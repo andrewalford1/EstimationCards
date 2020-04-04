@@ -2,7 +2,6 @@ import React from 'react'
 import './App.css'
 import Store from './store/store'
 import Routes from './Routes'
-import SideBar from './SideBar'
 
 const App = () => {
     const rooms = Store.rooms
@@ -10,7 +9,6 @@ const App = () => {
 
     return (
         <div className='App'>     
-            <SideBar/>
             <Routes/>
         </div>
     )
