@@ -12,6 +12,11 @@ a {
     color: #FFFFFF;
 }
 
+p {
+    color: #FFFFFF;
+    text-align: center;
+}
+
 .App {
     height: 100vh;
     display: flex;
@@ -20,7 +25,8 @@ a {
 .Page {
     flex-grow: 1;
     align-items: center;
+    
     display: flex;
     flex-direction: column;
+    padding: 0% 20% 0%;
 }
-
