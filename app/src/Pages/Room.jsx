@@ -27,6 +27,12 @@ const Room = () => {
         })
     }
 
+    const getUserCards = (users) => {
+        // loop over users
+        // for each user, get their name, number and ready status
+        // return in a card component and pass down values
+    }
+
     return (
         <div>
             <h1>Room</h1>
