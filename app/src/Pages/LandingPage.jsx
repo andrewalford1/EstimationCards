@@ -1,11 +1,9 @@
 import React from 'react';
 
 export default () => (
-
     <div>
         <h1>
-            Host Page
+            Landing Page
         </h1>
     </div>
 );
-
