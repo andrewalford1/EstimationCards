@@ -12,9 +12,15 @@ const Room = () => {
     }, [room])
 
     console.log('users', users)
+
+    const addUserToFireBaseTest = () => {
+        console.log('clicked')
+    }
+
     return (
         <div>
             <h1>Room</h1>
+            <button onClick={addUserToFireBaseTest}>Add User</button>
         </div>
     )
 }
