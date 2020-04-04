@@ -1,13 +1,17 @@
 import React from 'react'
 import './App.css'
-import Routes from './Routes';
+import Store from './store/store'
+import Routes from './Routes'
 
 function App() {
+    const rooms = Store.rooms
+    const users = Store.users
+
     return (
         <div className='App'>
-            <Routes/>
+            <Routes />
         </div>
-    );
+    )
 }
 
-export default App;
+export default App
