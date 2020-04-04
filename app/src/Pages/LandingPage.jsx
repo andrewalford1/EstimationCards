@@ -6,4 +6,4 @@ export default () => (
             Landing Page
         </h1>
     </div>
-);
+)

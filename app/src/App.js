@@ -4,7 +4,7 @@ import Store from './store/store'
 import Routes from './Routes'
 import SideBar from './SideBar'
 
-function App() {
+const App = () => {
     const rooms = Store.rooms
     const users = Store.users
 
