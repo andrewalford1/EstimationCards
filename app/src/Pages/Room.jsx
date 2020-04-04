@@ -33,8 +33,8 @@ const Room = () => {
 
     if (Array.isArray(users)) {
         cards = users.map((user) => {
-            const { number, ready, name } = user
-            return UserCard({ name, number, ready })
+            const { userId, name, number, ready } = user
+            return UserCard({ userId, name, number, ready })
         })
     }
 

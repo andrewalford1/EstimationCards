@@ -2,10 +2,10 @@ import React from 'react'
 import { Card, CardContent, Typography } from '@material-ui/core'
 
 const UserCard = (props) => {
-    const { name, number, ready } = props
+    const { userId, name, number, ready } = props
 
     return (
-        <Card>
+        <Card key={userId}>
             <CardContent>
                 <Typography gutterBottom variant='h5' component='h2'>
                     {name}
