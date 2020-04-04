@@ -14,7 +14,7 @@ const Room = () => {
 
     console.log('users', users)
 
-    const addUserToFireBaseTest = () => {
+    const addUserToFirebaseTest = () => {
         Store.users.add({
             roomId: room,
             userId: currentUser,
@@ -22,14 +22,12 @@ const Room = () => {
             number: '',
             joinedAt: new Date(),
         })
-
-        console.log('clicked')
     }
 
     return (
         <div>
             <h1>Room</h1>
-            <button onClick={addUserToFireBaseTest}>Add User</button>
+            <button onClick={addUserToFirebaseTest}>Add User</button>
         </div>
     )
 }

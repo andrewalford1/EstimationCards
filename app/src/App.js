@@ -3,7 +3,7 @@ import './App.css'
 import Store from './store/store'
 import Routes from './Routes'
 
-function App() {
+const App = () => {
     const rooms = Store.rooms
     const users = Store.users
 
