@@ -1,7 +1,8 @@
 import API from '../api'
 
-const data = API.firestore().collection('thing_to_add')
+const rooms = API.firestore().collection('rooms')
+const numbers = API.firestore().collection('rooms')
 
 // Add methods to collect data
 
-export default data
+export default { rooms, numbers }
