@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Store, { getRealTimeUsersInRoom } from '../store/store'
 import UserCard from '../components/UserCard'
+import { nanoid } from 'nanoid'
 
 const Room = () => {
     const [users, setUsers] = useState({})
@@ -22,9 +23,9 @@ const Room = () => {
 
     const addUserToFirebaseTest = () => {
         Store.users.add({
-            name: 'Dandrew',
+            name: 'RandomName',
             roomId: room,
-            userId: currentUser,
+            userId: nanoid(),
             ready: false,
             number: '',
             joinedAt: new Date(),
