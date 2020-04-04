@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Store, { getRealTimeUsersInRoom } from '../store/store'
+import Card from '../components/Card'
 
 const Room = () => {
     const [users, setUsers] = useState({})
@@ -10,6 +11,8 @@ const Room = () => {
     // TODO: Get user ID from somewhere...
     const [currentUser, setCurrentUser] = useState(1)
 
+    let cards
+
     useEffect(() => {
         // Updates the number of users available in the room
         getRealTimeUsersInRoom(room, (error, newUsers) => {
@@ -19,6 +22,7 @@ const Room = () => {
 
     const addUserToFirebaseTest = () => {
         Store.users.add({
+            name: 'Dandrew',
             roomId: room,
             userId: currentUser,
             ready: false,
@@ -27,20 +31,17 @@ const Room = () => {
         })
     }
 
-    let cards
-
     if (Array.isArray(users)) {
-        // loop over users
-        // for each user, get their name, number and ready status
-        // return in a card component and pass down values
         cards = users.map((user) => {
-            console.log(user)
+            const { number, ready, name } = user
+            return Card({ name, number, ready })
         })
     }
 
     return (
         <div>
             <h1>Room</h1>
+            {cards}
             <button onClick={addUserToFirebaseTest}>Add User</button>
         </div>
     )
