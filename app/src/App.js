@@ -4,7 +4,7 @@ import Store from './store/store'
 
 function App() {
     const rooms = Store.rooms
-    const numbers = Store.numbers
+    const users = Store.users
 
     return (
         <div className='App'>
