@@ -4,7 +4,7 @@ export default () => (
 
     <div>
         <h1>
-            Hello World
+            Host Page
         </h1>
     </div>
 );
