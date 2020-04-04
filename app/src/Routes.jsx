@@ -8,9 +8,9 @@ export default () => (
 
     <Router>
         <Switch>
-            <route exact path='/'>
+            <Route exact path='/'>
                 <LandingPage/>
-            </route>
+            </Route>
             
             <Route path="/randomRoomID">
                 <Room/>
@@ -21,4 +21,4 @@ export default () => (
             </Route>
         </Switch>
     </Router>
-);
+)
