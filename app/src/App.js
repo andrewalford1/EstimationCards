@@ -1,12 +1,15 @@
 import React from 'react'
 import './App.css'
+import Routes from './Routes';
+
+console.log('hello world');
 
 function App() {
     return (
         <div className='App'>
-            <h1>Estimation Station</h1>
+            <Routes/>
         </div>
-    )
+    );
 }
 
-export default App
+export default App;
