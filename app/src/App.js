@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import Store from './store/store'
+import Routes from './Routes'
 
 function App() {
     const rooms = Store.rooms
@@ -8,7 +9,7 @@ function App() {
 
     return (
         <div className='App'>
-            <h1>Estimation Station</h1>
+            <Routes />
         </div>
     )
 }
