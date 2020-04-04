@@ -1,9 +1,14 @@
 body {
-    background-color: #000000;
+    background-color: #1F2833;
     margin: 0;
 }
 
 h1 {
+    color: #FFFFFF;
+}
+
+a {
+    text-decoration: none;
     color: #FFFFFF;
 }
 
@@ -13,7 +18,9 @@ h1 {
 }
 
 .Page {
-    text-align: center;
     flex-grow: 1;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
