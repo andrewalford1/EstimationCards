@@ -4,6 +4,7 @@ import Store, { getRealTimeUsersInRoom } from '../store/store'
 const Room = () => {
     const [users, setUsers] = useState({})
     const [room, setRoom] = useState(1)
+    const [currentUser, setCurrentUser] = useState(1)
 
     useEffect(() => {
         getRealTimeUsersInRoom(room, (error, newUsers) => {
@@ -14,6 +15,14 @@ const Room = () => {
     console.log('users', users)
 
     const addUserToFireBaseTest = () => {
+        Store.users.add({
+            roomId: room,
+            userId: currentUser,
+            ready: false,
+            number: '',
+            joinedAt: new Date(),
+        })
+
         console.log('clicked')
     }
 
