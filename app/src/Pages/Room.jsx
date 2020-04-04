@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Store, { getRealTimeUsersInRoom } from '../store/store'
-import Card from '../components/Card'
+import UserCard from '../components/UserCard'
 
 const Room = () => {
     const [users, setUsers] = useState({})
@@ -34,7 +34,7 @@ const Room = () => {
     if (Array.isArray(users)) {
         cards = users.map((user) => {
             const { number, ready, name } = user
-            return Card({ name, number, ready })
+            return UserCard({ name, number, ready })
         })
     }
 

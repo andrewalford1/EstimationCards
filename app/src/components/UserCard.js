@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, CardContent, Typography } from '@material-ui/core'
 
-const UserChoice = (props) => {
+const UserCard = (props) => {
     const { name, number, ready } = props
 
     return (
@@ -18,4 +18,4 @@ const UserChoice = (props) => {
     )
 }
 
-export default UserChoice
+export default UserCard
