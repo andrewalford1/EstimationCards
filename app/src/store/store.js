@@ -7,19 +7,27 @@ export const getRealTimeUsersInRoom = (room, cb) => {
     return users
         .where('roomId', '==', room)
         .orderBy('joinedAt')
-        .onSnapshot(async (querySnapshot) => {
-            const newUsers =
-                querySnapshot && querySnapshot.docs
-                    ? querySnapshot.docs.map((doc) => ({
-                          ...doc.data(),
-                          id: doc.id,
-                      }))
-                    : []
+        .onSnapshot(
+            async (querySnapshot) => {
+                const newUsers =
+                    querySnapshot && querySnapshot.docs
+                        ? querySnapshot.docs.map((doc) => ({
+                              ...doc.data(),
+                              id: doc.id,
+                          }))
+                        : []
 
-            if (cb) {
-                cb(null, getUsersInRoom(newUsers))
+                if (cb) {
+                    cb(null, getUsersInRoom(newUsers))
+                }
+            },
+
+            (error) => {
+                if (cb) {
+                    cb(error, [])
+                }
             }
-        })
+        )
 }
 
 export const getUsersInRoom = (users) => {
