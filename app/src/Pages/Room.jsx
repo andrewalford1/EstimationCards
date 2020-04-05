@@ -5,14 +5,13 @@ import CopyToClipboard from '../components/CopyToClipboard'
 import { nanoid } from 'nanoid'
 
 const Room = () => {
-    const [users, setUsers] = useState({})
-
+    const [users, setUsers] = useState([])
     // TODO: Get room ID from URL I'm guessing
     const [room, setRoom] = useState(1)
-
     // TODO: Get user ID from somewhere...
-    const [currentUser, setCurrentUser] = useState(1)
+    const [currentUser, setCurrentUser] = useState({})
 
+    // Cards which are displayed in the room (for each respective user)
     let cards
 
     useEffect(() => {
@@ -22,17 +21,8 @@ const Room = () => {
         })
     }, [room])
 
-    const addUserToFirebaseTest = () => {
-        Store.users.add({
-            name: 'RandomName',
-            roomId: room,
-            userId: nanoid(),
-            ready: false,
-            number: '',
-            joinedAt: new Date(),
-        })
-    }
-
+    // Map over each of the users in the room and create a Card for each
+    // which will display their name and their chosen number
     if (Array.isArray(users)) {
         cards = users.map((user) => {
             const { userId, name, number, ready } = user
@@ -45,7 +35,7 @@ const Room = () => {
             <h1>Room</h1>
             {cards}
             {/* TODO: This should be removed as it was purely for testing. */}
-            <button onClick={addUserToFirebaseTest}>Add User</button>
+            <button onClick={() => console.log('Click')}>Test Button</button>
             <CopyToClipboard url={'Room Invitation URL'} />
         </div>
     )
