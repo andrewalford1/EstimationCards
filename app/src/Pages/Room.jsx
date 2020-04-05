@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import Store, { getRealTimeUsersInRoom } from '../store/store'
+import Store, {
+    getRealTimeUsersInRoom,
+    createUser,
+    createRoom,
+} from '../store/store'
 import UserCard from '../components/UserCard'
 import CopyToClipboard from '../components/CopyToClipboard'
 import { nanoid } from 'nanoid'
@@ -26,8 +30,28 @@ const Room = () => {
     if (Array.isArray(users)) {
         cards = users.map((user) => {
             const { userId, name, number, ready } = user
+
             return UserCard({ userId, name, number, ready })
         })
+    }
+
+    const createFakeUserForTesting = () => {
+        // name, roomId, userId, ready, number
+        const fakeUser = {
+            name: 'Bob Ross',
+            roomId: nanoid(),
+            userId: nanoid(),
+            ready: false,
+            number: 7,
+        }
+
+        createUser(fakeUser)
+    }
+
+    const createFakeRoomForTesting = () => {
+        const fakeRoom = { roomId: nanoid() }
+
+        createRoom(fakeRoom)
     }
 
     return (
@@ -35,7 +59,8 @@ const Room = () => {
             <h1>Room</h1>
             {cards}
             {/* TODO: This should be removed as it was purely for testing. */}
-            <button onClick={() => console.log('Click')}>Test Button</button>
+            <button onClick={createFakeUserForTesting}>Create User</button>
+            <button onClick={createFakeRoomForTesting}>Create Room</button>
             <CopyToClipboard url={'Room Invitation URL'} />
         </div>
     )

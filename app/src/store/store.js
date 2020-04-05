@@ -37,6 +37,22 @@ export const getUsersInRoom = (users) => {
 
     return sortedUsers
 }
+
+export const createRoom = (attributes) => {
+    const { roomId } = attributes
+    const now = new Date()
+
+    // Do we need updatedAt?
+    rooms.add({ roomId, createdAt: now, udpatedAt: now })
+}
+
+export const createUser = (attributes) => {
+    const { name, roomId, userId, ready, number } = attributes
+    const joinedAt = new Date()
+
+    return users.add({ name, roomId, userId, ready, number, joinedAt })
+}
+
 // export const getNumbersChosenByUsers
 // export const getUserReadyStatus
 
