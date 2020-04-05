@@ -1,6 +1,8 @@
 import React from 'react'
 import { Card, CardContent, Typography } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
 
 const UserCard = (props) => {
     const { userId, name, number, ready } = props
@@ -22,6 +24,17 @@ const UserCard = (props) => {
                     }}
                     variant="filled"
                 />
+
+                <FormControlLabel
+                control={
+                  <Switch
+                    name="revealCard"
+                    color="primary"
+                  />
+                }
+                label="Reveal Card"
+              />
+
             </CardContent>
         </Card>
     )
