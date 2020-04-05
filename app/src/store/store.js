@@ -38,12 +38,19 @@ export const getUsersInRoom = (users) => {
     return sortedUsers
 }
 
-export const createRoom = (attributes) => {
-    const { roomId } = attributes
-    const now = new Date()
+export const createRoom = async (attributes) => {
+    try {
+        const { roomId } = attributes
+        const now = new Date()
 
-    // Do we need updatedAt?
-    return rooms.doc(roomId).set({ roomId, createdAt: now, udpatedAt: now })
+        await rooms.doc(roomId).set({ roomId, createdAt: now, udpatedAt: now })
+
+        const room = await rooms.doc(roomId).get()
+
+        return room.exists ? room.data() : false
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 export const createUser = async (attributes) => {

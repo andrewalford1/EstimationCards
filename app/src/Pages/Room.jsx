@@ -51,10 +51,10 @@ const Room = () => {
         user.userId != null && setCurrentUser(user)
     }
 
-    const createFakeRoomForTesting = () => {
+    const createFakeRoomForTesting = async () => {
         const fakeRoom = { roomId: nanoid() }
 
-        createRoom(fakeRoom)
+        const room = await createRoom(fakeRoom)
     }
 
     return (
