@@ -15,7 +15,6 @@ const App = () => {
         <div className='App'>     
             <Routes/>
             <footer>
-
                 <div className='Credits'>
                     <Credit 
                     name='Andrew' 
