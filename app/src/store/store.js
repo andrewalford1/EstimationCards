@@ -37,6 +37,41 @@ export const getUsersInRoom = (users) => {
 
     return sortedUsers
 }
+
+export const createRoom = async (attributes) => {
+    try {
+        const { roomId } = attributes
+        const now = new Date()
+
+        await rooms.doc(roomId).set({ roomId, createdAt: now, udpatedAt: now })
+
+        const room = await rooms.doc(roomId).get()
+
+        return room.exists ? room.data() : false
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const createUser = async (attributes) => {
+    try {
+        const { name, roomId, userId, ready, number } = attributes
+        const joinedAt = new Date()
+
+        // Set the user
+        await users
+            .doc(userId)
+            .set({ name, roomId, userId, ready, number, joinedAt })
+
+        // Fetch the user which we just created and return data if it exists
+        const user = await users.doc(userId).get()
+
+        return user.exists ? user.data() : false
+    } catch (error) {
+        console.error(error)
+    }
+}
+
 // export const getNumbersChosenByUsers
 // export const getUserReadyStatus
 

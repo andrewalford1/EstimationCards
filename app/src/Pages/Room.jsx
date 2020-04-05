@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react'
-import Store, { getRealTimeUsersInRoom } from '../store/store'
+import Store, {
+    getRealTimeUsersInRoom,
+    createUser,
+    createRoom,
+} from '../store/store'
 import UserCard from '../components/UserCard'
 import CopyToClipboard from '../components/CopyToClipboard.js'
 import { nanoid } from 'nanoid'
 
 const Room = () => {
-    const [users, setUsers] = useState({})
-
+    const [users, setUsers] = useState([])
     // TODO: Get room ID from URL I'm guessing
     const [room, setRoom] = useState(1)
-
     // TODO: Get user ID from somewhere...
-    const [currentUser, setCurrentUser] = useState(1)
+    const [currentUser, setCurrentUser] = useState({})
 
+    // Cards which are displayed in the room (for each respective user)
     let cards
 
     useEffect(() => {
@@ -22,22 +25,36 @@ const Room = () => {
         })
     }, [room])
 
-    const addUserToFirebaseTest = () => {
-        Store.users.add({
-            name: 'RandomName',
-            roomId: room,
-            userId: nanoid(),
-            ready: false,
-            number: '',
-            joinedAt: new Date(),
-        })
-    }
-
+    // Map over each of the users in the room and create a Card for each
+    // which will display their name and their chosen number
     if (Array.isArray(users)) {
         cards = users.map((user) => {
             const { userId, name, number, ready } = user
+
             return UserCard({ userId, name, number, ready })
         })
+    }
+
+    const createFakeUserForTesting = async () => {
+        // name, roomId, userId, ready, number
+        const fakeUser = {
+            name: 'Bob Ross',
+            roomId: nanoid(),
+            userId: nanoid(),
+            ready: false,
+            number: 7,
+        }
+
+        const user = await createUser(fakeUser)
+
+        // TODO: Create an error to say there was an issue creating your user
+        user.userId != null && setCurrentUser(user)
+    }
+
+    const createFakeRoomForTesting = async () => {
+        const fakeRoom = { roomId: nanoid() }
+
+        const room = await createRoom(fakeRoom)
     }
 
     return (
@@ -45,8 +62,9 @@ const Room = () => {
             <h1>Room</h1>
             {cards}
             {/* TODO: This should be removed as it was purely for testing. */}
-            <button onClick={addUserToFirebaseTest}>Add User</button>
-            <CopyToClipboard url={'pickle Rick'}/>
+            <button onClick={createFakeUserForTesting}>Create User</button>
+            <button onClick={createFakeRoomForTesting}>Create Room</button>
+            <CopyToClipboard url={'pickle Rick'} />
         </div>
     )
 }
