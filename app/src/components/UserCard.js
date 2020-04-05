@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, CardContent, Typography } from '@material-ui/core'
+import TextField from '@material-ui/core/TextField';
 
 const UserCard = (props) => {
     const { userId, name, number, ready } = props
@@ -13,6 +14,14 @@ const UserCard = (props) => {
                 <Typography variant='body2' color='textSecondary' component='p'>
                     {number}
                 </Typography>
+                <TextField
+                    label="Estimation"
+                    type="number"
+                    InputLabelProps={{
+                    shrink: true,
+                    }}
+                    variant="filled"
+                />
             </CardContent>
         </Card>
     )

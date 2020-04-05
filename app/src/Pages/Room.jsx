@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Store, { getRealTimeUsersInRoom } from '../store/store'
 import UserCard from '../components/UserCard'
-import CopyToClipboard from '../components/CopyToClipboard'
+import CopyToClipboard from '../components/CopyToClipboard.js'
 import { nanoid } from 'nanoid'
 
 const Room = () => {
