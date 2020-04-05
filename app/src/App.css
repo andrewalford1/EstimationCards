@@ -30,6 +30,7 @@ body {
 .App {
     height: 100vh;
     display: flex;
+    flex-direction: column;
 }
 
 .Page {
@@ -39,5 +40,15 @@ body {
     flex-direction: column;
     padding: 0% 20% 0%;
     max-height: 90%;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
