@@ -7,6 +7,7 @@ import Store, {
 import UserCard from '../components/UserCard'
 import CopyToClipboard from '../components/CopyToClipboard.js'
 import { nanoid } from 'nanoid'
+import QRCode from 'qrcode.react'
 
 const Room = () => {
     const [users, setUsers] = useState([])
@@ -64,7 +65,11 @@ const Room = () => {
             {/* TODO: This should be removed as it was purely for testing. */}
             <button onClick={createFakeUserForTesting}>Create User</button>
             <button onClick={createFakeRoomForTesting}>Create Room</button>
-            <CopyToClipboard url={'pickle Rick'} />
+
+            <div className='RoomInvite'>
+                <CopyToClipboard url={'pickle Rick'} text={'Room ID'} />
+                <QRCode value="And then he turned himself into a pickle. Funniest shit I've ever seen"/>
+            </div>
         </div>
     )
 }
