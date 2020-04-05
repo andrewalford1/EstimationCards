@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent, Typography } from '@material-ui/core'
+import { Card, CardContent, Typography, CardActions } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
@@ -16,6 +16,9 @@ const UserCard = (props) => {
                 <Typography variant='body2' color='textSecondary' component='p'>
                     {number}
                 </Typography>
+            </CardContent>
+
+            <CardActions>
                 <TextField
                     label="Estimation"
                     type="number"
@@ -26,16 +29,15 @@ const UserCard = (props) => {
                 />
 
                 <FormControlLabel
-                control={
-                  <Switch
-                    name="revealCard"
-                    color="primary"
-                  />
-                }
-                label="Reveal Card"
-              />
-
-            </CardContent>
+                    control={
+                    <Switch
+                        name="revealCard"
+                        color="primary"
+                    />
+                    }
+                    label="Reveal Card"
+                />
+            </CardActions>
         </Card>
     )
 }
