@@ -19,16 +19,12 @@ p {
 }
 
 img {
-    max-width: 75%;
-    max-height: 75%;
+    max-width: 50%;
+    max-height: 50%;
 }
 
 body {
     max-height: 70%;
-}
-
-footer {
-    margin-top: auto;
 }
 
 .App {
@@ -43,9 +39,5 @@ footer {
     flex-direction: column;
     padding: 0% 20% 0%;
     max-height: 90%;
-}
-
-#intro_text {
-    padding: 10% 0% 10%;
 }
 

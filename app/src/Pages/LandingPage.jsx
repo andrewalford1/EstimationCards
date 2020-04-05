@@ -1,4 +1,5 @@
 import React from 'react'
+import Remote from '../assets/remote.svg'
 import {Button} from '@material-ui/core'
 
 export default () => (
@@ -17,14 +18,15 @@ export default () => (
             </p>
             <p>
             This application has been created enable software teams to 
-            effortlessly estimate backlog items in a virtual environment.
+            effortlessly estimate backlog items in a virtual environment 
+            when remote working.
             </p>
         </div>
+
+        <img src={Remote} alt={''}/>
         
-        <footer>
-            <Button color='primary' variant='outlined'>
-                <a href='/'><a href='/RandomRoomId'>Start Estimating</a></a>
-            </Button>
-        </footer>
+        <Button color='primary' variant='outlined'>
+            <a href='/'><a href='/RandomRoomId'>Start Estimating</a></a>
+        </Button>
     </div>
 )

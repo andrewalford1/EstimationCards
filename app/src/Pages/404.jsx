@@ -9,10 +9,8 @@ export default () => (
 
         <img src={Lost} alt={''}/>
 
-        <footer>
-            <Button color='primary' variant='outlined'>
+        <Button color='primary' variant='outlined'>
             <a href='/'>Home</a>
-            </Button>
-        </footer>
+        </Button>
     </div>
 )
