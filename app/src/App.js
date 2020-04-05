@@ -3,7 +3,6 @@ import './App.css'
 import Store from './store/store'
 import Routes from './Routes'
 import Credit from './components/Credit'
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
