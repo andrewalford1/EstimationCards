@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Store, { getRealTimeUsersInRoom } from '../store/store'
 import UserCard from '../components/UserCard'
+import CopyToClipboard from '../components/CopyToClipboard'
 import { nanoid } from 'nanoid'
 
 const Room = () => {
@@ -45,6 +46,7 @@ const Room = () => {
             {cards}
             {/* TODO: This should be removed as it was purely for testing. */}
             <button onClick={addUserToFirebaseTest}>Add User</button>
+            <CopyToClipboard url={'Room Invitation URL'}/>
         </div>
     )
 }
