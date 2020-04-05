@@ -3,7 +3,7 @@ import API from '../api'
 const rooms = API.firestore().collection('rooms')
 const users = API.firestore().collection('users')
 
-export const getRealTimeUsersInRoom = (room, cb) => {
+export const getRealTimeUsersInRoom = (room, callback) => {
     return users
         .where('roomId', '==', room)
         .orderBy('joinedAt')
@@ -17,14 +17,14 @@ export const getRealTimeUsersInRoom = (room, cb) => {
                           }))
                         : []
 
-                if (cb) {
-                    cb(null, getUsersInRoom(newUsers))
+                if (callback) {
+                    callback(null, getUsersInRoom(newUsers))
                 }
             },
 
             (error) => {
-                if (cb) {
-                    cb(error, [])
+                if (callback) {
+                    callback(error, [])
                 }
             }
         )

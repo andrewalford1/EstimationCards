@@ -5,8 +5,8 @@ import UserCard from '../components/UserCard'
 
 const DynamicRoom = () => {
     const roomId = useRouteMatch('/room/:id').params.id
-    const [currentRoomId, setCurrentRoomId] = useState(roomId)
-    const [room, setRoom] = useState(currentRoomId)
+
+    const [room, setRoom] = useState(roomId)
     const [users, setUsers] = useState([])
 
     // Cards which will be displayed in the room
@@ -28,9 +28,12 @@ const DynamicRoom = () => {
         })
     }
 
-    console.log(cards)
-
-    return <div>You are in room {currentRoomId} </div>
+    return (
+        <div>
+            You are in room {room}
+            {cards}
+        </div>
+    )
 }
 
 export default DynamicRoom
