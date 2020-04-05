@@ -46,7 +46,7 @@ const Room = () => {
             {cards}
             {/* TODO: This should be removed as it was purely for testing. */}
             <button onClick={addUserToFirebaseTest}>Add User</button>
-            <CopyToClipboard url={'Room Invitation URL'}/>
+            <CopyToClipboard url={'Room Invitation URL'} />
         </div>
     )
 }
