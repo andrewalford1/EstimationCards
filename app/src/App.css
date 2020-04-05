@@ -13,6 +13,10 @@ a {
     color: #FFFFFF;
 }
 
+text {
+    color: #FFFFFF;
+}
+
 p {
     color: #FFFFFF;
     text-align: center;
@@ -50,4 +54,11 @@ footer {
     flex-direction: column;
     padding: 0% 20% 0%;
     max-height: 90%;
+}
+
+.RoomInvite {
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
 }

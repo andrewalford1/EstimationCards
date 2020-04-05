@@ -1,16 +1,22 @@
 import React from 'react'
 import copy from 'copy-to-clipboard';
 import { Button } from '@material-ui/core';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
 
-export default ({url}) => {
+export default ({url, text}) => {
 
     const copyText = () => {
         copy(url);
     }
 
     return (
-        <Button color='primary' variant='outlined' onClick={copyText}>
-            Copy to clipboard
+        <Button 
+        color='primary' 
+        variant='outlined' 
+        onClick={copyText}
+        endIcon={<FileCopyIcon/>}
+        >
+            <text>{text}</text>
         </Button>
     );
 }
