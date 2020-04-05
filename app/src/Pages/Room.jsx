@@ -5,7 +5,7 @@ import Store, {
     createRoom,
 } from '../store/store'
 import UserCard from '../components/UserCard'
-import CopyToClipboard from '../components/CopyToClipboard'
+import CopyToClipboard from '../components/CopyToClipboard.js'
 import { nanoid } from 'nanoid'
 
 const Room = () => {
@@ -64,7 +64,7 @@ const Room = () => {
             {/* TODO: This should be removed as it was purely for testing. */}
             <button onClick={createFakeUserForTesting}>Create User</button>
             <button onClick={createFakeRoomForTesting}>Create Room</button>
-            <CopyToClipboard url={'Room Invitation URL'} />
+            <CopyToClipboard url={'pickle Rick'} />
         </div>
     )
 }
