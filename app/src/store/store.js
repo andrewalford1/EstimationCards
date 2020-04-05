@@ -43,14 +43,26 @@ export const createRoom = (attributes) => {
     const now = new Date()
 
     // Do we need updatedAt?
-    rooms.add({ roomId, createdAt: now, udpatedAt: now })
+    return rooms.doc(roomId).set({ roomId, createdAt: now, udpatedAt: now })
 }
 
-export const createUser = (attributes) => {
-    const { name, roomId, userId, ready, number } = attributes
-    const joinedAt = new Date()
+export const createUser = async (attributes) => {
+    try {
+        const { name, roomId, userId, ready, number } = attributes
+        const joinedAt = new Date()
 
-    return users.add({ name, roomId, userId, ready, number, joinedAt })
+        // Set the user
+        await users
+            .doc(userId)
+            .set({ name, roomId, userId, ready, number, joinedAt })
+
+        // Fetch the user which we just created and return data if it exists
+        const user = await users.doc(userId).get()
+
+        return user.exists ? user.data() : false
+    } catch (error) {
+        console.error(error)
+    }
 }
 
 // export const getNumbersChosenByUsers

@@ -35,7 +35,7 @@ const Room = () => {
         })
     }
 
-    const createFakeUserForTesting = () => {
+    const createFakeUserForTesting = async () => {
         // name, roomId, userId, ready, number
         const fakeUser = {
             name: 'Bob Ross',
@@ -45,7 +45,10 @@ const Room = () => {
             number: 7,
         }
 
-        createUser(fakeUser)
+        const user = await createUser(fakeUser)
+
+        // TODO: Create an error to say there was an issue creating your user
+        user.userId != null && setCurrentUser(user)
     }
 
     const createFakeRoomForTesting = () => {
