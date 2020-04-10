@@ -31,6 +31,6 @@ export default () => (
             </Button>
         </div>
 
-        <img src={Remote} alt={''} />
+        <img src={Remote} alt={'Woman sitting at her desk'} />
     </div>
 )
