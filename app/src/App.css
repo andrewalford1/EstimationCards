@@ -46,7 +46,7 @@ footer {
     flex-direction: column;
 }
 
-.Page {
+.landingPage {
     flex-grow: 1;
     align-items: center;
     display: flex;
@@ -55,8 +55,12 @@ footer {
     max-height: 90%;
 }
 
-#IntroText {
+.introText {
     width: 60%;
+}
+
+.buttonChoices button:first-child {
+    margin-right: 10px;
 }
 
 .RoomInvite {

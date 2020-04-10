@@ -3,10 +3,10 @@ import Remote from '../assets/remote.svg'
 import { Button } from '@material-ui/core'
 
 export default () => (
-    <div className='Page'>
+    <div className='landingPage'>
         <h1>Welcome</h1>
 
-        <div id='IntroText'>
+        <div className='introText'>
             <p>
                 In Scrum Projects, Estimation is done by the entire team during
                 Sprint Planning Meeting. The objective of the Estimation would
@@ -21,9 +21,15 @@ export default () => (
             </p>
         </div>
 
-        <Button variant='contained' color='primary'>
-            <a href='/RandomRoomId'>Start Estimating</a>
-        </Button>
+        <div className='buttonChoices'>
+            <Button variant='contained' color='primary'>
+                <a href='/RandomRoomId'>Make a room</a>
+            </Button>
+
+            <Button variant='contained' color='primary'>
+                <a href='/RandomRoomId'>Join a room</a>
+            </Button>
+        </div>
 
         <img src={Remote} alt={''} />
     </div>
