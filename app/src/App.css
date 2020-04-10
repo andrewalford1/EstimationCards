@@ -1,24 +1,24 @@
 body {
-    background-color: #1F2833;
-    overflow-y:hidden;
+    background-color: #2d3a80;
+    overflow-y: hidden;
     margin: 0;
 }
 
 h1 {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 a {
     text-decoration: none;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 text {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 p {
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -38,7 +38,6 @@ footer {
     width: 98%;
     display: flex;
     flex-direction: row-reverse;
-    
 }
 
 .App {
@@ -54,6 +53,10 @@ footer {
     flex-direction: column;
     padding: 0% 20% 0%;
     max-height: 90%;
+}
+
+#IntroText {
+    width: 60%;
 }
 
 .RoomInvite {
