@@ -1,25 +1,7 @@
 body {
-    background-color: #1F2833;
-    overflow-y:hidden;
+    background-color: #f5cfc7;
+    overflow-y: hidden;
     margin: 0;
-}
-
-h1 {
-    color: #FFFFFF;
-}
-
-a {
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
-text {
-    color: #FFFFFF;
-}
-
-p {
-    color: #FFFFFF;
-    text-align: center;
 }
 
 img {
@@ -38,7 +20,6 @@ footer {
     width: 98%;
     display: flex;
     flex-direction: row-reverse;
-    
 }
 
 .App {
@@ -47,7 +28,7 @@ footer {
     flex-direction: column;
 }
 
-.Page {
+.landingPage {
     flex-grow: 1;
     align-items: center;
     display: flex;
@@ -56,9 +37,43 @@ footer {
     max-height: 90%;
 }
 
+.introText {
+    text-align: center;
+    width: 60%;
+}
+
+.buttonChoices {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.buttonChoices h2 {
+    margin: 0;
+}
+
+.buttonChoices div {
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 8px 16px 0px,
+        rgba(0, 0, 0, 0.16) 0px 1px 4px 0px;
+}
+
 .RoomInvite {
     border-radius: 3px;
     display: flex;
     flex-direction: column;
     width: 20%;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: #000000;
 }

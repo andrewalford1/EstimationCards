@@ -1,32 +1,47 @@
 import React from 'react'
 import Remote from '../assets/remote.svg'
-import {Button} from '@material-ui/core'
+import { Button } from '@material-ui/core'
 
 export default () => (
-    <div className='Page'>
-        <h1>
-            Welcome
-        </h1>
+    <div className='landingPage'>
+        <h1>Welcome</h1>
 
-        <div id='intro_text'>
+        <div className='introText'>
             <p>
-            In Scrum Projects, Estimation is done by the entire team during 
-            Sprint Planning Meeting. The objective of the Estimation would 
-            be to consider the User Stories for the Sprint by Priority and
-            by the Ability of the team to deliver during the 
-            Time Box of the Sprint.
+                A flexible tool to provide quick estimation sessions, no
+                downloads and no tedious logins.
             </p>
             <p>
-            This application has been created enable software teams to 
-            effortlessly estimate backlog items in a virtual environment 
-            when remote working.
+                In Scrum Projects, Estimation is done by the entire team during
+                Sprint Planning Meeting. The objective of the Estimation would
+                be to consider the User Stories for the Sprint by Priority and
+                by the Ability of the team to deliver during the Time Box of the
+                Sprint.
             </p>
         </div>
 
-        <img src={Remote} alt={''}/>
-        
-        <Button color='primary' variant='outlined'>
-            <a href='/'><a href='/RandomRoomId'>Start Estimating</a></a>
-        </Button>
+        <div className='buttonChoices'>
+            <div>
+                <h2>Create a room</h2>
+                <p>
+                    You can create a room for your collegues and begin
+                    estimating stories quickly and easily!
+                </p>
+                <Button variant='contained' color='default'>
+                    <a href='/create'>Create</a>
+                </Button>
+            </div>
+
+            <div>
+                <h2>Join a room</h2>
+                <p>
+                    Do you already know a room has been set up? Well, you can
+                    join it by entering the URL here too!
+                </p>
+                <Button variant='contained' color='default'>
+                    <a href='/join'>Join</a>
+                </Button>
+            </div>
+        </div>
     </div>
 )
