@@ -6,10 +6,15 @@ import { Button, TextField } from '@material-ui/core'
 const CreateRoom = () => {
     const [roomName, setRoomName] = useState('')
     const [error, setError] = useState('')
+    const [createdRoom, setCreatedRoom] = useState({})
 
     const handleCreateRoom = async () => {
         const roomId = nanoid()
-        await createRoom({ roomId, roomName })
+
+        // While await maybe set some sort of loading?
+        const room = await createRoom({ roomId, roomName })
+
+        setCreatedRoom(room)
     }
 
     const handleNameChange = (event) => {
