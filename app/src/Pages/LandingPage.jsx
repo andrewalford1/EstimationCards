@@ -26,9 +26,8 @@ export default () => (
                     You can create a room for your collegues and begin
                     estimating stories quickly and easily!
                 </p>
-
-                <Button variant='contained' color='primary'>
-                    <a href='/RandomRoomId'>Create a room</a>
+                <Button variant='contained' color='default'>
+                    <a href='/create'>Create a room</a>
                 </Button>
             </div>
 
@@ -37,12 +36,10 @@ export default () => (
                     Do you already know a room has been set up? Well, you can
                     join it by entering the URL here too!
                 </p>
-                <Button variant='contained' color='primary'>
-                    <a href='/RandomRoomId'>Join a room</a>
+                <Button variant='contained' color='default'>
+                    <a href='/join'>Join a room</a>
                 </Button>
             </div>
         </div>
-
-        <img src={Remote} alt={'Woman sitting at her desk'} />
     </div>
 )

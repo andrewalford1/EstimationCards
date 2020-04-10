@@ -4,7 +4,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 
 export default ({ name, LinkedIn }) => {
     return (
-        <Button variant='contained' color='primary' endIcon={<LinkedInIcon />}>
+        <Button variant='contained' color='default' endIcon={<LinkedInIcon />}>
             <a href={LinkedIn}>{name}</a>
         </Button>
     )
