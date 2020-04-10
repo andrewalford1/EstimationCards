@@ -22,22 +22,24 @@ export default () => (
 
         <div className='buttonChoices'>
             <div>
+                <h2>Create a room</h2>
                 <p>
                     You can create a room for your collegues and begin
                     estimating stories quickly and easily!
                 </p>
                 <Button variant='contained' color='default'>
-                    <a href='/create'>Create a room</a>
+                    <a href='/create'>Create</a>
                 </Button>
             </div>
 
             <div>
+                <h2>Join a room</h2>
                 <p>
                     Do you already know a room has been set up? Well, you can
                     join it by entering the URL here too!
                 </p>
                 <Button variant='contained' color='default'>
-                    <a href='/join'>Join a room</a>
+                    <a href='/join'>Join</a>
                 </Button>
             </div>
         </div>
