@@ -40,10 +40,12 @@ export const getUsersInRoom = (users) => {
 
 export const createRoom = async (attributes) => {
     try {
-        const { roomId } = attributes
+        const { roomId, roomName } = attributes
         const now = new Date()
 
-        await rooms.doc(roomId).set({ roomId, createdAt: now, udpatedAt: now })
+        await rooms
+            .doc(roomId)
+            .set({ roomId, roomName, createdAt: now, udpatedAt: now })
 
         const room = await rooms.doc(roomId).get()
 

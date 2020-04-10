@@ -5,6 +5,7 @@ import { Button, TextField } from '@material-ui/core'
 
 const CreateRoom = () => {
     const [roomName, setRoomName] = useState('')
+    const [error, setError] = useState('')
 
     const handleCreateRoom = async () => {
         const roomId = nanoid()
@@ -13,6 +14,9 @@ const CreateRoom = () => {
 
     const handleNameChange = (event) => {
         const name = event.target.value
+
+        !name ? setError('Your room needs a name') : setError('')
+
         setRoomName(name)
     }
 
@@ -24,12 +28,14 @@ const CreateRoom = () => {
                         id='standard-basic'
                         label='Room name'
                         onChange={handleNameChange}
+                        error={error}
                         value={roomName}
                     />
                     <Button
                         variant='contained'
                         color='default'
                         onClick={handleCreateRoom}
+                        disabled={error && error}
                     >
                         Create Room
                     </Button>
