@@ -30,6 +30,7 @@ const CreateRoom = () => {
                         onChange={handleNameChange}
                         error={error}
                         value={roomName}
+                        helperText={error}
                     />
                     <Button
                         variant='contained'
