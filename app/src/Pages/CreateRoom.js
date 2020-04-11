@@ -28,9 +28,14 @@ const CreateRoom = () => {
         setRoomName(name)
     }
 
+    const submitHandler = (event) => {
+        // Could just create room in here as well?
+        event.preventDefault()
+    }
+
     const renderForm = () => {
         return (
-            <form id='createRoom'>
+            <form id='createRoom' onSubmit={submitHandler}>
                 <TextField
                     id='standard-basic'
                     label='Room name'
@@ -54,6 +59,11 @@ const CreateRoom = () => {
     const renderRouteToRoom = (room) => {
         return (
             <>
+                <h2>Awesome!</h2>
+                <p>
+                    We've arranged the tables and chairs for you. Just share it
+                    with your colleagues.
+                </p>
                 <CopyButton
                     url={`/room/${room.roomId}`}
                     text={`Copy room URL`}

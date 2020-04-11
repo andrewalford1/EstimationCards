@@ -9,7 +9,12 @@ export default ({ url, text }) => {
     }
 
     return (
-        <Button color='primary' onClick={copyText} endIcon={<FileCopyIcon />}>
+        <Button
+            variant='contained'
+            color='primary'
+            onClick={copyText}
+            endIcon={<FileCopyIcon />}
+        >
             {text}
         </Button>
     )
