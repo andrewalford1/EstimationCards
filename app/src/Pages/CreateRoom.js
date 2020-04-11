@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { createRoom } from '../store/store'
 import { nanoid } from 'nanoid'
 import { Button, TextField } from '@material-ui/core'
+import CopyButton from '../components/CopyToClipboard'
 
 const CreateRoom = () => {
     const [roomName, setRoomName] = useState('')
@@ -50,11 +51,12 @@ const CreateRoom = () => {
 
     const renderRouteToRoom = (room) => {
         return (
-            <div>
-                <Button variant='contained' color='default'>
-                    <a href={`/room/${room.roomId}`}>Join {room.roomName}</a>
-                </Button>
-            </div>
+            <>
+                <CopyButton
+                    url={`/room/${room.roomId}`}
+                    text={`Copy room URL`}
+                />
+            </>
         )
     }
     return (
