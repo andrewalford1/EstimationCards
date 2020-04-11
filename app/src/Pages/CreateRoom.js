@@ -22,7 +22,7 @@ const CreateRoom = () => {
     const handleNameChange = (event) => {
         const name = event.target.value
 
-        !name ? setError(true) : setError(false)
+        setError(!name)
         !name ? setErrorMessage('Your room needs a name') : setErrorMessage('')
 
         setRoomName(name)
