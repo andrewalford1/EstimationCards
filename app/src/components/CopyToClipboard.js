@@ -10,7 +10,7 @@ export default ({ url, text }) => {
 
     return (
         <Button color='primary' onClick={copyText} endIcon={<FileCopyIcon />}>
-            <text>{text}</text>
+            {text}
         </Button>
     )
 }
