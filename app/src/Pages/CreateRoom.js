@@ -6,7 +6,8 @@ import CopyButton from '../components/CopyToClipboard'
 
 const CreateRoom = () => {
     const [roomName, setRoomName] = useState('')
-    const [error, setError] = useState('')
+    const [error, setError] = useState(false)
+    const [errorMessage, setErrorMessage] = useState('')
     const [createdRoom, setCreatedRoom] = useState('')
 
     const handleCreateRoom = async () => {
@@ -21,7 +22,8 @@ const CreateRoom = () => {
     const handleNameChange = (event) => {
         const name = event.target.value
 
-        !name ? setError('Your room needs a name') : setError('')
+        !name ? setError(true) : setError(false)
+        !name ? setErrorMessage('Your room needs a name') : setErrorMessage('')
 
         setRoomName(name)
     }
@@ -35,7 +37,7 @@ const CreateRoom = () => {
                     onChange={handleNameChange}
                     error={error}
                     value={roomName}
-                    helperText={error}
+                    helperText={errorMessage}
                 />
                 <Button
                     variant='contained'
